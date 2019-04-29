@@ -3,9 +3,11 @@ package com.example.carrental;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class login extends AppCompatActivity implements View.OnClickListener {
     EditText username,password;
@@ -29,6 +31,21 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId())
         {
             case R.id.login:
+                if(TextUtils.isEmpty(username.getText().toString()))
+                {
+                    username.setError("Please enter your username");
+                    username.requestFocus();
+                    return;
+                }
+                else if(TextUtils.isEmpty(password.getText().toString()))
+                {
+                    password.setError("Please enter your password");
+                    password.requestFocus();
+                }
+                else
+                {
+                    Toast.makeText(this, "Values not null", Toast.LENGTH_SHORT).show();
+                }
                 break;
 
             case R.id.signUp:

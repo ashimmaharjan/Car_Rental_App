@@ -117,7 +117,8 @@
         android:layout_marginTop="10dp"
         android:textSize="20sp"
         android:layout_alignParentRight="true"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:inputType="textEmailAddress"/>
 
     <EditText
         android:id="@+id/inputUName"
@@ -143,7 +144,8 @@
         android:layout_marginTop="10dp"
         android:textSize="20sp"
         android:layout_alignParentRight="true"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:inputType="textPassword"/>
 
     <EditText
         android:id="@+id/inputCPassword"
@@ -156,7 +158,8 @@
         android:layout_marginTop="10dp"
         android:textSize="20sp"
         android:layout_alignParentRight="true"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:inputType="textPassword"/>
 
     <EditText
         android:id="@+id/inputPhone"
@@ -169,7 +172,8 @@
         android:layout_marginTop="10dp"
         android:textSize="20sp"
         android:layout_alignParentRight="true"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:inputType="number"/>
 
 
 
