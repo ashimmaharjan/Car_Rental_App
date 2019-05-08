@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.carrental.Helper.DatabaseHelper;
+import com.example.carrental.Model.Users;
+
 public class register extends AppCompatActivity implements View.OnClickListener {
     EditText firstName,lastName,email,username,password,cpassword,phoneNumber;
     Button btnRegister;
@@ -25,6 +28,7 @@ public class register extends AppCompatActivity implements View.OnClickListener 
         phoneNumber=findViewById(R.id.inputPhone);
         btnRegister=findViewById(R.id.register);
         btnRegister.setOnClickListener(this);
+
     }
 
     @Override
@@ -72,9 +76,30 @@ public class register extends AppCompatActivity implements View.OnClickListener 
             phoneNumber.requestFocus();
             return;
         }
+        else if(!password.getText().toString().equals(cpassword.getText().toString()))
+        {
+            Toast.makeText(this, "Sorry, passwords don't match. Please check and try again.", Toast.LENGTH_SHORT).show();
+        }
         else
         {
-            Toast.makeText(this, "Values not null", Toast.LENGTH_SHORT).show();
+            final DatabaseHelper databaseHelper=new DatabaseHelper(this);
+
+            long id=databaseHelper.AddUsers(new Users(0,firstName.getText().toString(),
+                    lastName.getText().toString(),
+                    email.getText().toString(),
+                    username.getText().toString(),
+                    password.getText().toString(),
+                    phoneNumber.getText().toString()));
+            Toast.makeText(this, "You have been successfully registered.", Toast.LENGTH_SHORT).show();
+
+            firstName.setText("");
+            lastName.setText("");
+            email.setText("");
+            username.setText("");
+            password.setText("");
+            cpassword.setText("");
+            phoneNumber.setText("");
+
         }
     }
 }

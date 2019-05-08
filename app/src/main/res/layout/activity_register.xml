@@ -1,181 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".register">
 
-    <TextView
-        android:id="@+id/txtRegister"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:textSize="40sp"
-        android:textAlignment="center" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/txtFName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="First Name:"
-        android:layout_below="@+id/txtRegister"
-        style="@style/textView_register"/>
 
-    <TextView
-        android:id="@+id/txtLName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Last Name:"
-        style="@style/textView_register"
-        android:layout_below="@+id/txtFName"/>
+        <TextView
+            android:id="@+id/txtRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:textSize="40sp"
+            android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/txtEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email:"
-        style="@style/textView_register"
-        android:layout_below="@id/txtLName"/>
+        <TextView
+            android:id="@+id/txtFName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="First Name:"
+            android:layout_below="@+id/txtRegister"
+            style="@style/textView_register"/>
 
-    <TextView
-        android:id="@+id/txtUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Username:"
-        style="@style/textView_register"
-        android:layout_below="@+id/txtEmail"/>
+        <TextView
+            android:id="@+id/txtLName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Last Name:"
+            style="@style/textView_register"
+            android:layout_below="@+id/inputFName"/>
 
-    <TextView
-        android:id="@+id/txtPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Passwod:"
-        style="@style/textView_register"
-        android:layout_below="@+id/txtUsername"/>
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            style="@style/textView_register"
+            android:layout_below="@id/inputLName"/>
 
-    <TextView
-        android:id="@+id/txtCPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Confirm Password:"
-        style="@style/textView_register"
-        android:layout_below="@id/txtPassword" />
+        <TextView
+            android:id="@+id/txtUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Username:"
+            style="@style/textView_register"
+            android:layout_below="@+id/inputEmail"/>
 
-    <TextView
-        android:id="@+id/txtPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phone Number:"
-        style="@style/textView_register"
-        android:layout_below="@id/txtCPassword"/>
+        <TextView
+            android:id="@+id/txtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password:"
+            style="@style/textView_register"
+            android:layout_below="@+id/inputUName"/>
 
-    <Button
-        android:id="@+id/register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtPhone"
-        android:layout_marginTop="20dp"
-        android:text="register"
-        android:textSize="20sp"
-        android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/txtCPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirm Password:"
+            style="@style/textView_register"
+            android:layout_below="@id/inputPass" />
 
-    <EditText
-        android:id="@+id/inputFName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Enter your first name"
-        android:background="@drawable/edit_text_style"
-        android:layout_toRightOf="@id/txtFName"
-        android:layout_below="@id/txtRegister"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:layout_alignParentRight="true"
-        android:textAlignment="center"/>
+        <TextView
+            android:id="@+id/txtPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone Number:"
+            style="@style/textView_register"
+            android:layout_below="@id/inputCPassword"/>
 
-    <EditText
-        android:id="@+id/inputLName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Enter your last name"
-        android:background="@drawable/edit_text_style"
-        android:layout_toRightOf="@id/txtLName"
-        android:layout_below="@id/txtFName"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:layout_alignParentRight="true"
-        android:textAlignment="center"/>
+        <Button
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/inputPhone"
+            android:layout_marginTop="20dp"
+            android:text="register"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"/>
 
-    <EditText
-        android:id="@+id/inputEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Enter your email"
-        android:background="@drawable/edit_text_style"
-        android:layout_toRightOf="@id/txtEmail"
-        android:layout_below="@id/txtLName"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:layout_alignParentRight="true"
-        android:textAlignment="center"
-        android:inputType="textEmailAddress"/>
+        <EditText
+            android:id="@+id/inputFName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your first name"
+            android:background="@drawable/edit_text_style"
+            android:layout_below="@id/txtFName"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textAlignment="center"/>
 
-    <EditText
-        android:id="@+id/inputUName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Enter a username"
-        android:background="@drawable/edit_text_style"
-        android:layout_toRightOf="@id/txtUsername"
-        android:layout_below="@id/txtEmail"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:layout_alignParentRight="true"
-        android:textAlignment="center"/>
+        <EditText
+            android:id="@+id/inputLName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your last name"
+            android:background="@drawable/edit_text_style"
+            android:layout_below="@id/txtLName"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textAlignment="center"/>
 
-    <EditText
-        android:id="@+id/inputPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Enter password"
-        android:background="@drawable/edit_text_style"
-        android:layout_toRightOf="@id/txtPassword"
-        android:layout_below="@id/txtUsername"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:layout_alignParentRight="true"
-        android:textAlignment="center"
-        android:inputType="textPassword"/>
+        <EditText
+            android:id="@+id/inputEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your email"
+            android:background="@drawable/edit_text_style"
+            android:layout_below="@id/txtEmail"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:inputType="textEmailAddress"/>
 
-    <EditText
-        android:id="@+id/inputCPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Re-enter password"
-        android:background="@drawable/edit_text_style"
-        android:layout_toRightOf="@id/txtCPassword"
-        android:layout_below="@id/txtPassword"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:layout_alignParentRight="true"
-        android:textAlignment="center"
-        android:inputType="textPassword"/>
+        <EditText
+            android:id="@+id/inputUName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter a username"
+            android:background="@drawable/edit_text_style"
+            android:layout_below="@id/txtUsername"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textAlignment="center"/>
 
-    <EditText
-        android:id="@+id/inputPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Enter your phone number"
-        android:background="@drawable/edit_text_style"
-        android:layout_toRightOf="@id/txtPhone"
-        android:layout_below="@id/txtCPassword"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:layout_alignParentRight="true"
-        android:textAlignment="center"
-        android:inputType="number"/>
+        <EditText
+            android:id="@+id/inputPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter password"
+            android:background="@drawable/edit_text_style"
+            android:layout_below="@id/txtPassword"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:inputType="textPassword"/>
+
+        <EditText
+            android:id="@+id/inputCPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Re-enter password"
+            android:background="@drawable/edit_text_style"
+            android:layout_below="@id/txtCPassword"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:inputType="textPassword"/>
+
+        <EditText
+            android:id="@+id/inputPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your phone number"
+            android:background="@drawable/edit_text_style"
+            android:layout_below="@id/txtPhone"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:inputType="number"/>
+
+
+
+    </RelativeLayout>
 
 
 
 
-</RelativeLayout>
+
+</ScrollView>
