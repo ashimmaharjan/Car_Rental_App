@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".register">
+    tools:context=".register"
+    android:background="@drawable/gradient_bg">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
 
 
         <TextView
@@ -17,7 +20,9 @@
             android:layout_height="wrap_content"
             android:text="Register"
             android:textSize="40sp"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="#ffff"/>
 
         <TextView
             android:id="@+id/txtFName"
@@ -77,94 +82,81 @@
 
         <Button
             android:id="@+id/register"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/inputPhone"
             android:layout_marginTop="20dp"
             android:text="register"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true"/>
+            style="@style/buttons"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_style"/>
 
         <EditText
             android:id="@+id/inputFName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:hint="Enter your first name"
             android:background="@drawable/edit_text_style"
             android:layout_below="@id/txtFName"
-            android:layout_marginTop="10dp"
-            android:textSize="20sp"
-            android:textAlignment="center"/>
+            style="@style/editText_register"/>
 
         <EditText
             android:id="@+id/inputLName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:hint="Enter your last name"
             android:background="@drawable/edit_text_style"
             android:layout_below="@id/txtLName"
-            android:layout_marginTop="10dp"
-            android:textSize="20sp"
-            android:textAlignment="center"/>
+            style="@style/editText_register"/>
 
         <EditText
             android:id="@+id/inputEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:hint="Enter your email"
             android:background="@drawable/edit_text_style"
             android:layout_below="@id/txtEmail"
-            android:layout_marginTop="10dp"
-            android:textSize="20sp"
-            android:textAlignment="center"
+            style="@style/editText_register"
             android:inputType="textEmailAddress"/>
 
         <EditText
             android:id="@+id/inputUName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:hint="Enter a username"
             android:background="@drawable/edit_text_style"
             android:layout_below="@id/txtUsername"
-            android:layout_marginTop="10dp"
-            android:textSize="20sp"
-            android:textAlignment="center"/>
+            style="@style/editText_register"/>
 
         <EditText
             android:id="@+id/inputPass"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:hint="Enter password"
             android:background="@drawable/edit_text_style"
             android:layout_below="@id/txtPassword"
-            android:layout_marginTop="10dp"
-            android:textSize="20sp"
-            android:textAlignment="center"
+            style="@style/editText_register"
             android:inputType="textPassword"/>
 
         <EditText
             android:id="@+id/inputCPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:hint="Re-enter password"
             android:background="@drawable/edit_text_style"
             android:layout_below="@id/txtCPassword"
-            android:layout_marginTop="10dp"
-            android:textSize="20sp"
-            android:textAlignment="center"
+            style="@style/editText_register"
             android:inputType="textPassword"/>
 
         <EditText
             android:id="@+id/inputPhone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:hint="Enter your phone number"
             android:background="@drawable/edit_text_style"
             android:layout_below="@id/txtPhone"
-            android:layout_marginTop="10dp"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:inputType="number"/>
+            style="@style/editText_register"
+            android:inputType="phone"/>
 
 
 

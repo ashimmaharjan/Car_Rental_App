@@ -4,57 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login">
+    tools:context=".login"
+    android:background="@drawable/gradient_bg">
 
-    <TextView
-        android:id="@+id/txtLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="LOGIN"
-        android:textSize="40sp"
-        android:textAlignment="center" />
-
-    <EditText
-        android:id="@+id/inputUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter your username"
-        android:layout_below="@id/txtLogin"
-        android:textAlignment="center"
-        android:background="@drawable/edit_text_style"
-        android:layout_marginTop="5dp"
-        android:textSize="20sp"/>
-
-    <EditText
-        android:id="@+id/inputPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter your Password"
-        android:layout_below="@+id/inputUsername"
-        android:background="@drawable/edit_text_style"
-        android:textAlignment="center"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/login"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/inputPassword"
-        android:text="login"
-        android:textSize="25sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="100dp"/>
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_centerInParent="true">
 
-    <Button
-        android:id="@+id/signUp"
+        <TextView
+            android:id="@+id/txtLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:textSize="40sp"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="#ffff"/>
+
+        <EditText
+            android:id="@+id/inputUsername"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Enter your username"
+            android:layout_below="@id/txtLogin"
+            android:background="@drawable/edit_text_style"
+            style="@style/editText_register"/>
+
+        <EditText
+            android:id="@+id/inputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Enter your Password"
+            android:layout_below="@+id/inputUsername"
+            android:background="@drawable/edit_text_style"
+            android:inputType="textPassword"
+            style="@style/editText_register"
+            android:layout_marginTop="30dp"/>
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/inputPassword"
+            android:text="login"
+            android:background="@drawable/btn_style"
+            android:layout_centerHorizontal="true"
+            style="@style/buttons"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="New to car rental? Sign up now!!!"
+            style="@style/editText_register"
+            android:layout_below="@+id/login"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/inputPassword"
-        android:text="sign up"
-        android:textSize="25sp"
-        android:layout_toRightOf="@id/login"
-        android:layout_marginTop="10dp"/>
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/signUp"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="sign up"
+            android:background="@drawable/btn_style"
+            style="@style/buttons"
+            android:layout_alignParentBottom="true" />
+
+        <Button
+            android:id="@+id/forgotPassword"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password"
+            android:background="@drawable/btn_style"
+            style="@style/buttons"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"/>
+
+
+
+    </RelativeLayout>
 
 </RelativeLayout>
