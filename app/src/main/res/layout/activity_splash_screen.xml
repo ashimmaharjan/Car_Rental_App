@@ -5,12 +5,12 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context=".splashScreen"
-    android:background="#ffff">
+    android:background="@drawable/gradient_splashscreen">
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:src="@drawable/logo"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"/>

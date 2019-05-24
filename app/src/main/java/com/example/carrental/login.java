@@ -44,7 +44,8 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                 }
                 else
                 {
-                    Toast.makeText(this, "Values not null", Toast.LENGTH_SHORT).show();
+                    Intent dashboard=new Intent(login.this,Dashboard.class);
+                    startActivity(dashboard);
                 }
                 break;
 

@@ -70,20 +70,24 @@
 
         <Button
             android:id="@+id/signUp"
-            android:layout_width="110dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="sign up"
-            android:background="@drawable/btn_style"
-            style="@style/buttons"
+            android:background="@null"
+            android:textColor="#ffff"
+            android:textSize="20sp"
+            android:fontFamily="casual"
             android:layout_alignParentBottom="true" />
 
         <Button
             android:id="@+id/forgotPassword"
-            android:layout_width="280dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Forgot Password"
-            android:background="@drawable/btn_style"
-            style="@style/buttons"
+            android:fontFamily="casual"
+            android:textSize="20sp"
+            android:background="@null"
+            android:textColor="#ffff"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"/>
 
