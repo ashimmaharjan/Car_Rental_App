@@ -7,9 +7,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-public class login extends AppCompatActivity implements View.OnClickListener {
+public class Login extends AppCompatActivity implements View.OnClickListener {
     EditText username,password;
     Button btnLogin,btnSignUp;
     @Override
@@ -44,13 +43,13 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                 }
                 else
                 {
-                    Intent dashboard=new Intent(login.this,Dashboard.class);
+                    Intent dashboard=new Intent(Login.this,Dashboard.class);
                     startActivity(dashboard);
                 }
                 break;
 
             case R.id.signUp:
-                Intent openRegister=new Intent(login.this,register.class);
+                Intent openRegister=new Intent(Login.this, Register.class);
                 startActivity(openRegister);
                 break;
         }

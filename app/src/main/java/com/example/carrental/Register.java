@@ -8,12 +8,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.carrental.Helper.DatabaseHelper;
-import com.example.carrental.Model.Users;
 
-public class register extends AppCompatActivity implements View.OnClickListener {
+import com.example.carrental.Interface.CarRentalsAPI;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+public class Register extends AppCompatActivity implements View.OnClickListener {
     EditText firstName,lastName,email,username,password,cpassword,phoneNumber;
     Button btnRegister;
+    String uFName,uLName,uEmail,uUsername,uPassword,uPhone;
+    CarRentalsAPI api;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,15 +90,13 @@ public class register extends AppCompatActivity implements View.OnClickListener 
         }
         else
         {
-            final DatabaseHelper databaseHelper=new DatabaseHelper(this);
-
-            long id=databaseHelper.AddUsers(new Users(0,firstName.getText().toString(),
-                    lastName.getText().toString(),
-                    email.getText().toString(),
-                    username.getText().toString(),
-                    password.getText().toString(),
-                    phoneNumber.getText().toString()));
-            Toast.makeText(this, "You have been successfully registered.", Toast.LENGTH_SHORT).show();
+            uFName=firstName.getText().toString();
+            uLName=lastName.getText().toString();
+            uEmail=email.getText().toString();
+            uUsername=username.getText().toString();
+            uPassword=password.getText().toString();
+            uPhone=phoneNumber.getText().toString();
+            registerUsers();
 
             firstName.setText("");
             lastName.setText("");
@@ -102,4 +108,37 @@ public class register extends AppCompatActivity implements View.OnClickListener 
 
         }
     }
+
+    private void createInstance() {
+        Retrofit retrofit=new Retrofit.Builder()
+                .baseUrl("http://10.0.2.2:6969/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        api=retrofit.create(CarRentalsAPI.class);
+    }
+
+    private void registerUsers() {
+        createInstance();
+
+        Call<String> usersCall=api.addUser(
+                uFName,
+                uLName,
+                uEmail,
+                uUsername,
+                uPassword,
+                uPhone);
+
+        usersCall.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                Toast.makeText(Register.this,response.body(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Toast.makeText(Register.this, "Error"+t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }
+
