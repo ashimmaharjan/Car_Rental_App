@@ -31,7 +31,8 @@
             android:hint="Enter your username"
             android:layout_below="@id/txtLogin"
             android:background="@drawable/edit_text_style"
-            style="@style/editText_register"/>
+            style="@style/editText_register"
+            android:drawableRight="@drawable/ic_person_black_24dp"/>
 
         <EditText
             android:id="@+id/inputPassword"
@@ -42,7 +43,8 @@
             android:background="@drawable/edit_text_style"
             android:inputType="textPassword"
             style="@style/editText_register"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="30dp"
+            android:drawableRight="@drawable/ic_lock_outline_black_24dp"/>
 
         <Button
             android:id="@+id/login"
