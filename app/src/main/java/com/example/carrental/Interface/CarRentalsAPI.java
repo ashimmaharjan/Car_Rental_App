@@ -16,5 +16,8 @@ public interface CarRentalsAPI {
     @POST("registerUser")
     Call<String> addUser(@Field("first_name") String first_name, @Field("last_name") String last_name, @Field("email")String email, @Field("username") String username, @Field("password") String password, @Field("phone_number") String phone_number);
 
+    @FormUrlEncoded
+    @POST("login")
+    Call<String> loginCheck(@Field("username") String username,@Field("password") String password);
 
 }
