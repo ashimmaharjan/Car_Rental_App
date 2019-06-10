@@ -7,10 +7,21 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.carrental.Interface.CarRentalsAPI;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
     EditText username,password;
     Button btnLogin,btnSignUp;
+    CarRentalsAPI api;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +33,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         btnSignUp=findViewById(R.id.signUp);
         btnLogin.setOnClickListener(this);
         btnSignUp.setOnClickListener(this);
+
+        Retrofit retrofit=new Retrofit.Builder()
+                .baseUrl("http://10.0.2.2:6969/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        api=retrofit.create(CarRentalsAPI.class);
     }
 
     @Override
@@ -43,8 +60,22 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 }
                 else
                 {
-                    Intent dashboard=new Intent(Login.this,Dashboard.class);
-                    startActivity(dashboard);
+                    Call<String> checkLogin=api.loginCheck(username.getText().toString(),password.getText().toString());
+                    checkLogin.enqueue(new Callback<String>() {
+                        @Override
+                        public void onResponse(Call<String> call, Response<String> response) {
+                            if(response.body().equals("Login successful")){
+                                Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                Intent openDashboard=new Intent(Login.this,Dashboard.class);
+                                startActivity(openDashboard);
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<String> call, Throwable t) {
+                            Toast.makeText(Login.this, "Invalid username or password.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
                 break;
 
