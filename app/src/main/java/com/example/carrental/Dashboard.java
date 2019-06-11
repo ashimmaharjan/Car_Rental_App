@@ -31,6 +31,10 @@ public class Dashboard extends AppCompatActivity {
 
         viewPager.setAdapter(viewPagerFragmentAdapter);
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home_black_24dp);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_search_black_24dp);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_book_black_24dp);
+        tabLayout.getTabAt(3).setIcon(R.drawable.ic_person_black_24dp);
 
     }
 }
