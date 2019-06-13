@@ -7,12 +7,6 @@
     tools:context=".Dashboard"
     android:background="@drawable/gradient_bg">
 
-    <TextView
-        android:id="@+id/heading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Dashboard"
-        style="@style/textView_register"/>
 
     <android.support.design.widget.TabLayout
         android:layout_width="match_parent"

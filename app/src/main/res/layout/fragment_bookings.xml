@@ -6,9 +6,45 @@
     tools:context=".Fragments.Bookings">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="This is bookings page" />
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/textView_register"
+            android:text="Pick-Up Date:"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/editText_register"
+            android:id="@+id/inputPickUpDate"
+            android:inputType="date"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/textView_register"
+            android:text="Drop-off Date:"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/editText_register"
+            android:id="@+id/inputDropOffDate"
+            android:inputType="date"/>
+
+        <Button
+            android:id="@+id/book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/buttons"
+            android:text="BOOK"/>
+
+
+    </LinearLayout>
 
 </FrameLayout>

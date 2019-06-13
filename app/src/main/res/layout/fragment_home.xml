@@ -27,8 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="manage cars"
-                android:textSize="20sp"
-                android:fontFamily="casual"
+                style="@style/textView_register"
                 android:textStyle="bold"
                 android:background="@drawable/btn_style"/>
 
@@ -42,14 +41,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="MANAGE USERS"
-                android:textSize="20sp"
-                android:fontFamily="casual"
+                style="@style/textView_register"
                 android:textStyle="bold"
                 android:background="@drawable/btn_style"/>
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="175dp"
                 android:src="@drawable/manage" />
 
             <Button
@@ -57,8 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="MANAGE BOOKINGS"
-                android:textSize="20sp"
-                android:fontFamily="casual"
+                style="@style/editText_register"
                 android:textStyle="bold"
                 android:background="@drawable/btn_style"/>
         </LinearLayout>
