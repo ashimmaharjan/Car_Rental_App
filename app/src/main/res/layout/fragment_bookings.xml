@@ -41,8 +41,9 @@
             android:id="@+id/book"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/buttons"
-            android:text="BOOK"/>
+            android:background="@drawable/btn_style"
+            android:text="BOOK"
+            style="@style/buttons"/>
 
 
     </LinearLayout>
