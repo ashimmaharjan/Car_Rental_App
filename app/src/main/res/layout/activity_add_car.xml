@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddCar"
+    android:background="@drawable/gradient_bg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter Car Details"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:fontFamily="sans-serif-condensed-medium"/>
+
+            <TextView
+                android:id="@+id/txtCarImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select an image for car by clicking on image below"
+                android:layout_below="@+id/top"
+                style="@style/textView_register"
+                android:textStyle="italic"/>
+
+            <ImageView
+                android:id="@+id/inputCarImage"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@+id/txtCarImage"
+                android:src="@drawable/car"/>
+
+            <EditText
+                android:id="@+id/inputImageName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/editText_register"
+                android:background="@drawable/edit_text_style"
+                android:layout_below="@+id/inputCarImage"
+                android:visibility="invisible"/>
+
+            <TextView
+                android:id="@+id/txtCarName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Car Name:"
+                style="@style/textView_register"
+                android:layout_below="@+id/inputCarImage"/>
+
+            <EditText
+                android:id="@+id/inputCarName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Car Name"
+                style="@style/editText_register"
+                android:layout_below="@+id/txtCarName"
+                android:background="@drawable/edit_text_style"
+                android:inputType="text"/>
+
+            <TextView
+                android:id="@+id/txtCarMan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Manufacturer:"
+                style="@style/textView_register"
+                android:layout_below="@+id/inputCarName"/>
+
+            <EditText
+                android:id="@+id/inputCarMan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Manufacturer's Name"
+                style="@style/editText_register"
+                android:layout_below="@+id/txtCarMan"
+                android:background="@drawable/edit_text_style"
+                android:inputType="text"/>
+
+            <TextView
+                android:id="@+id/txtSeats"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Number of seats:"
+                style="@style/textView_register"
+                android:layout_below="@+id/inputCarMan"/>
+
+            <EditText
+                android:id="@+id/inputSeats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter available seat no."
+                style="@style/editText_register"
+                android:layout_below="@+id/txtSeats"
+                android:background="@drawable/edit_text_style"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/txtAC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Air Conditioner:"
+                style="@style/textView_register"
+                android:layout_below="@+id/inputSeats"/>
+
+            <RadioGroup
+                android:id="@+id/AC_Status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtAC"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <RadioButton
+                    android:id="@+id/statusYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    style="@style/editText_register"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/statusNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    style="@style/editText_register"
+                    android:checked="false"
+                    android:layout_marginLeft="20dp"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/txtMileage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mileage:"
+                android:layout_below="@+id/AC_Status"
+                style="@style/textView_register"/>
+
+            <EditText
+                android:id="@+id/inputMileage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/editText_register"
+                android:background="@drawable/edit_text_style"
+                android:hint="Enter Mileage"
+                android:layout_below="@+id/txtMileage"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Rental Price:"
+                style="@style/textView_register"
+                android:layout_below="@+id/inputMileage"/>
+
+            <EditText
+                android:id="@+id/inputRentalPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter rental price per hour"
+                android:layout_below="@id/txtPrice"
+                style="@style/editText_register"
+                android:background="@drawable/edit_text_style"
+                android:inputType="number"/>
+
+            <Button
+                android:id="@+id/insertCar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Car"
+                style="@style/buttons"
+                android:background="@drawable/btn_style"
+                android:layout_below="@id/inputRentalPrice"
+                android:layout_marginTop="20dp"/>
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

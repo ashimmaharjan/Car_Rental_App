@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Manage_Cars"
+    android:background="@drawable/gradient_bg">
+
+
+    <TextView
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage Cars"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-condensed-medium"/>
+    <ImageView
+        android:id="@+id/addCarImg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/addcar"
+        android:layout_marginTop="70dp"/>
+
+    <Button
+        android:id="@+id/addCar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ADD CAR"
+        android:background="@drawable/btn_style"
+        style="@style/buttons"
+        android:layout_below="@+id/addCarImg"/>
+
+    <ImageView
+        android:id="@+id/UD_Image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/addCar"
+        android:src="@drawable/updatecar"/>
+
+    <Button
+        android:id="@+id/UD_Car"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UPDATE / DELETE CAR"
+        android:background="@drawable/btn_style"
+        style="@style/buttons"
+        android:layout_below="@+id/UD_Image"
+        android:layout_marginTop="20sp"/>
+
+</RelativeLayout>
