@@ -12,14 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AddCar"></activity>
-        <activity android:name=".Manage_Cars" />
-        <activity android:name=".Dashboard" />
-        <activity android:name=".Register" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Login" />
+        <activity android:name=".Controllers.AdminDashboard"></activity>
+        <activity android:name=".Controllers.AddCar" />
+        <activity android:name=".Controllers.Manage_Cars" />
+        <activity android:name=".Controllers.Dashboard" />
+        <activity android:name=".Controllers.Register" />
+        <activity android:name=".Controllers.MainActivity" />
+        <activity android:name=".Controllers.Login" />
         <activity
-            android:name=".splashScreen"
+            android:name=".Controllers.SplashScreen"
             android:noHistory="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>

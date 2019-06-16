@@ -2,13 +2,17 @@ package com.example.carrental.Interface;
 
 import android.telephony.SignalStrength;
 
+import com.example.carrental.Model.Cars;
 import com.example.carrental.Model.Users;
+
+import java.util.List;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -27,6 +31,10 @@ public interface CarRentalsAPI {
     @POST("addCar")
     Call<String> addCar(@Field("carName") String carName,@Field("carMan") String carMan,@Field("carAC_Status") String carAC_Status,@Field("carSeats") String carSeats,
                         @Field("carMileage") String carMileage,@Field("carRentalPrice") String carRentalPrice,@Field("carImageName") String carImageName);
+
+
+    @GET("getCars")
+    Call<List<Cars>> getCars();
 
     @Multipart
     @POST("uploadImage")

@@ -1,8 +1,7 @@
-package com.example.carrental;
+package com.example.carrental.Controllers;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Handler;
 import android.provider.MediaStore;
@@ -13,11 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.carrental.Interface.CarRentalsAPI;
+import com.example.carrental.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

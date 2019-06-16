@@ -1,4 +1,4 @@
-package com.example.carrental;
+package com.example.carrental.Controllers;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.carrental.Interface.CarRentalsAPI;
+import com.example.carrental.R;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -60,22 +61,31 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 }
                 else
                 {
-                    Call<String> checkLogin=api.loginCheck(username.getText().toString(),password.getText().toString());
-                    checkLogin.enqueue(new Callback<String>() {
-                        @Override
-                        public void onResponse(Call<String> call, Response<String> response) {
-                            if(response.body().equals("Login successful")){
-                                Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                Intent openDashboard=new Intent(Login.this,Dashboard.class);
-                                startActivity(openDashboard);
-                            }
-                        }
+                    if (username.getText().toString().equals("admin") && password.getText().toString().equals("admin"))
+                    {
+                        Intent openAdminDashboard=new Intent(Login.this, AdminDashboard.class);
+                        startActivity(openAdminDashboard);
 
-                        @Override
-                        public void onFailure(Call<String> call, Throwable t) {
-                            Toast.makeText(Login.this, "Invalid username or password.", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                    }
+                    else
+                    {
+                        Call<String> checkLogin=api.loginCheck(username.getText().toString(),password.getText().toString());
+                        checkLogin.enqueue(new Callback<String>() {
+                            @Override
+                            public void onResponse(Call<String> call, Response<String> response) {
+                                if(response.body().equals("Login successful")){
+                                    Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                    Intent openDashboard=new Intent(Login.this,Dashboard.class);
+                                    startActivity(openDashboard);
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<String> call, Throwable t) {
+                                Toast.makeText(Login.this, "Invalid username or password.", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
                 }
                 break;
 

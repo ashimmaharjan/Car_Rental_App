@@ -1,4 +1,4 @@
-package com.example.carrental;
+package com.example.carrental.Controllers;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 
 import com.example.carrental.Interface.CarRentalsAPI;
+import com.example.carrental.R;
 
 import retrofit2.Call;
 import retrofit2.Callback;

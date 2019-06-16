@@ -1,4 +1,4 @@
-package com.example.carrental;
+package com.example.carrental.Controllers;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -9,6 +9,7 @@ import com.example.carrental.Fragments.Bookings;
 import com.example.carrental.Fragments.Home;
 import com.example.carrental.Fragments.Profile;
 import com.example.carrental.Fragments.Search;
+import com.example.carrental.R;
 
 public class Dashboard extends AppCompatActivity {
 

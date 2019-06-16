@@ -7,59 +7,46 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_bg">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome"
+            android:textSize="40dp"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:textColor="#131212"/>
+
+        <TextView
+            android:id="@+id/getUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top"
+            android:layout_marginTop="15dp"
+            android:textAlignment="center"
+            android:textSize="35dp"
+            android:fontFamily="casual"
+            android:text="USER"
+            android:textAllCaps="true"
+            android:textColor="#181717"
+            android:textStyle="italic"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_below="@+id/getUsername"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/gradient_bg">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:src="@drawable/car"/>
+        </android.support.v7.widget.RecyclerView>
 
-            <Button
-                android:id="@+id/manageCars"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="manage cars"
-                style="@style/textView_register"
-                android:textStyle="bold"
-                android:background="@drawable/btn_style"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:src="@drawable/manage_users"/>
-
-            <Button
-                android:id="@+id/manageUsers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="MANAGE USERS"
-                style="@style/textView_register"
-                android:textStyle="bold"
-                android:background="@drawable/btn_style"/>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="175dp"
-                android:src="@drawable/manage" />
-
-            <Button
-                android:id="@+id/manageBookings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="MANAGE BOOKINGS"
-                style="@style/editText_register"
-                android:textStyle="bold"
-                android:background="@drawable/btn_style"/>
-        </LinearLayout>
-
-    </ScrollView>
+    </RelativeLayout>
 
 </FrameLayout>

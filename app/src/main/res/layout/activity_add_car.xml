@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddCar"
+    tools:context=".Controllers.AddCar"
     android:background="@drawable/gradient_bg">
 
     <ScrollView
@@ -13,7 +13,9 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
             <TextView
                 android:id="@+id/top"
@@ -43,7 +45,7 @@
             <EditText
                 android:id="@+id/inputImageName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 style="@style/editText_register"
                 android:background="@drawable/edit_text_style"
                 android:layout_below="@+id/inputCarImage"
@@ -60,7 +62,7 @@
             <EditText
                 android:id="@+id/inputCarName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:hint="Enter Car Name"
                 style="@style/editText_register"
                 android:layout_below="@+id/txtCarName"
@@ -78,7 +80,7 @@
             <EditText
                 android:id="@+id/inputCarMan"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:hint="Enter Manufacturer's Name"
                 style="@style/editText_register"
                 android:layout_below="@+id/txtCarMan"
@@ -96,7 +98,7 @@
             <EditText
                 android:id="@+id/inputSeats"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:hint="Enter available seat no."
                 style="@style/editText_register"
                 android:layout_below="@+id/txtSeats"
@@ -149,7 +151,7 @@
             <EditText
                 android:id="@+id/inputMileage"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 style="@style/editText_register"
                 android:background="@drawable/edit_text_style"
                 android:hint="Enter Mileage"
@@ -167,7 +169,7 @@
             <EditText
                 android:id="@+id/inputRentalPrice"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:hint="Enter rental price per hour"
                 android:layout_below="@id/txtPrice"
                 style="@style/editText_register"

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg">
+
+    <ImageView
+        android:id="@+id/sample_CarImage"
+        android:layout_width="match_parent"
+        android:layout_height="250dp" />
+
+    <TextView
+        android:id="@+id/sample_CarName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sample_CarImage"
+        style="@style/textView_register"/>
+
+    <TextView
+        android:id="@+id/sample_CarRPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sample_CarName"
+        style="@style/textView_register"/>
+
+    <Button
+        android:id="@+id/sample_btn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        style="@style/buttons"
+        android:background="@drawable/btn_style"
+        android:text="View Details"
+        android:layout_below="@+id/sample_CarRPrice"
+        android:layout_centerHorizontal="true"/>
+
+
+
+
+</RelativeLayout>
