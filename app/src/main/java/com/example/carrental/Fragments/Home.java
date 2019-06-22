@@ -1,6 +1,7 @@
 package com.example.carrental.Fragments;
 
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,6 +19,7 @@ import com.example.carrental.Interface.CarRentalsAPI;
 import com.example.carrental.Model.Cars;
 import com.example.carrental.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -32,6 +34,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Home extends Fragment {
 
     RecyclerView recyclerView;
+    List<Cars> carsList=new ArrayList<>();
     Retrofit retrofit;
     CarRentalsAPI api;
 
@@ -67,7 +70,7 @@ public class Home extends Fragment {
             public void onResponse(Call<List<Cars>> call, Response<List<Cars>> response) {
 
                 List<Cars> carsList=response.body();
-                recyclerView.setAdapter(new CarAdapter(carsList,getActivity()));
+                recyclerView.setAdapter(new CarAdapter(carsList,getContext()));
             }
 
             @Override

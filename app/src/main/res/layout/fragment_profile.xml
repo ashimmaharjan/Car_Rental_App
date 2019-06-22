@@ -3,12 +3,140 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.Profile">
+    tools:context=".Fragments.Profile"
+    android:background="@drawable/gradient_bg">
+
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="this is profile page" />
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center_horizontal">
+
+      <TextView
+          android:id="@+id/top"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Your Information"
+          android:textAlignment="center"
+          android:textStyle="bold"
+          android:fontFamily="sans-serif-condensed"
+          android:textSize="30dp" />
+
+      <ImageView
+          android:id="@+id/profileImage"
+          android:layout_width="200dp"
+          android:layout_height="200dp"
+          android:layout_below="@+id/top"
+          android:layout_centerHorizontal="true"/>
+
+      <TextView
+          android:id="@+id/profileFName"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="First Name: "
+          style="@style/textView_DC"
+          android:layout_below="@+id/profileImage"
+          android:layout_marginLeft="40dp"/>
+
+      <TextView
+          android:id="@+id/displayFName"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@+id/profileFName"
+          style="@style/textView_DC"
+          android:layout_below="@+id/profileImage"/>
+
+      <TextView
+          android:id="@+id/profileLName"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Last Name: "
+          style="@style/textView_DC"
+          android:layout_below="@+id/profileFName"
+          android:layout_marginLeft="40dp"/>
+
+      <TextView
+          android:id="@+id/displayLName"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@+id/profileLName"
+          style="@style/textView_DC"
+          android:layout_below="@+id/profileFName"/>
+
+      <TextView
+          android:id="@+id/profileEmail"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Email: "
+          style="@style/textView_DC"
+          android:layout_below="@+id/profileLName"
+          android:layout_marginLeft="40dp"/>
+
+      <TextView
+          android:id="@+id/displayEmail"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@+id/profileEmail"
+          style="@style/textView_DC"
+          android:layout_below="@+id/profileLName"/>
+
+      <TextView
+          android:id="@+id/profileUsername"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Username: "
+          style="@style/textView_DC"
+          android:layout_below="@+id/profileEmail"
+          android:layout_marginLeft="40dp"/>
+
+      <TextView
+          android:id="@+id/displayUsername"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@+id/profileUsername"
+          style="@style/textView_DC"
+          android:layout_below="@+id/profileEmail"/>
+
+      <TextView
+          android:id="@+id/profilePN"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Phone Number: "
+          style="@style/textView_DC"
+          android:layout_below="@+id/profileUsername"
+          android:layout_marginLeft="40dp"/>
+
+      <TextView
+          android:id="@+id/displayPN"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@+id/profilePN"
+          style="@style/textView_DC"
+          android:layout_below="@+id/profileUsername"/>
+
+      <Button
+          android:id="@+id/editProfile"
+          android:layout_width="180dp"
+          android:layout_height="wrap_content"
+          android:text="Edit Profile"
+          android:layout_below="@+id/displayPN"
+          android:layout_marginTop="30dp"
+          style="@style/buttons"
+          android:background="@drawable/btn_style"
+          android:layout_centerHorizontal="true"/>
+
+      <Button
+          android:id="@+id/changePassword"
+          android:layout_width="250dp"
+          android:layout_height="wrap_content"
+          android:text="Change Password"
+          android:layout_below="@+id/editProfile"
+          style="@style/buttons"
+          android:background="@drawable/btn_style"
+          android:layout_marginTop="30dp"
+          android:layout_centerHorizontal="true"/>
+
+  </RelativeLayout>
 
 </FrameLayout>

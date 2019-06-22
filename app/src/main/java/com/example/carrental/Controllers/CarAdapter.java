@@ -1,6 +1,7 @@
 package com.example.carrental.Controllers;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -23,6 +24,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
 
     List<Cars> carsList;
     Context context;
+    Bitmap bitmap;
     public static final String BASE_URL= "http://10.0.2.2:6969";
 
     public CarAdapter(List<Cars> carsList, Context context) {
@@ -46,11 +48,26 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
 
         Picasso.with(context).load(BASE_URL+"/images/"+cars.getCarImageName()).into(carViewHolder.carImage);
         Log.d("log","onBindHolder: "+BASE_URL+"/images/"+cars.getCarImageName());
-        Toast.makeText(context, ""+carsList.size(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, ""+cars.getCarImageName(), Toast.LENGTH_SHORT).show();
 
         carViewHolder.viewMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Context vcontext=v.getContext();
+                String provide_path=BASE_URL+"/images/"+cars.getCarImageName();
+
+                System.out.println(provide_path);
+
+                Intent openDetails=new Intent(context, DisplayClickedCar.class);
+                openDetails.putExtra("carName",cars.getCarName());
+                openDetails.putExtra("carMan",cars.getCarMan());
+                openDetails.putExtra("carAC",cars.getCarAC_Status());
+                openDetails.putExtra("carSeats",cars.getCarSeats());
+                openDetails.putExtra("carMileage",cars.getCarMileage());
+                openDetails.putExtra("carPrice",cars.getCarRentalPrice());
+                openDetails.putExtra("carImageName",BASE_URL+"/images/"+cars.getCarImageName());
+
+                vcontext.startActivity(openDetails);
             }
         });
 
