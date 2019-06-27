@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controllers.UpdateDeleteCar"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_bg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter car name"
+                style="@style/editText_register"/>
+
+            <Button
+                android:id="@+id/searchCar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_style"
+                style="@style/buttons"
+                android:text="SEARCH"/>
+
+            <EditText
+                android:id="@+id/fillCarName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/editText_register"
+                android:hint="Car Name"/>
+
+            <EditText
+                android:id="@+id/fillCarMan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/editText_register"
+                android:hint="Car Manufacturer"/>
+
+            <EditText
+                android:id="@+id/fillCarSeats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/editText_register"
+                android:hint="Number of seats"/>
+
+            <TextView
+                android:id="@+id/txtAC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Air Conditioner:"
+                style="@style/textView_register"
+                android:layout_below="@+id/inputSeats"/>
+
+            <RadioGroup
+                android:id="@+id/fillAC_Status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtAC"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <RadioButton
+                    android:id="@+id/statusYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    style="@style/editText_register"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/statusNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    style="@style/editText_register"
+                    android:checked="false"
+                    android:layout_marginLeft="20dp"/>
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/fillCarMileage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/editText_register"
+                android:hint="Mileage"/>
+
+            <EditText
+                android:id="@+id/fillCarPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/editText_register"
+                android:hint="Rental Price"/>
+
+            <Button
+                android:id="@+id/updateCar"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:background="@drawable/btn_style"
+                style="@style/buttons"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <Button
+                android:id="@+id/deleteCar"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:background="@drawable/btn_style"
+                style="@style/buttons"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

@@ -32,6 +32,14 @@ public class Manage_Cars extends AppCompatActivity {
             }
         });
 
+        btnUD_Car.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent openUD_Car=new Intent(Manage_Cars.this,UpdateDeleteCar.class);
+                startActivity(openUD_Car);
+            }
+        });
+
 
     }
 }
