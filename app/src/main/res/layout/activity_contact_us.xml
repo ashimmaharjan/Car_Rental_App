@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactUs"
+    android:background="@drawable/btn_style"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <TextView
+        android:id="@+id/topPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact Us"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="35sp"/>
+
+    <EditText
+        android:id="@+id/inputFullName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Enter full name"
+        android:layout_below="@id/topPanel"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:background="@drawable/edit_text_style_black"
+        android:textColorHint="#0C0C0C"
+        android:fontFamily="casual"
+        android:textColor="#0A0101"/>
+
+    <EditText
+        android:id="@+id/inputEmail"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Enter email"
+        android:layout_below="@id/inputFullName"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:background="@drawable/edit_text_style_black"
+        android:textColorHint="#0C0C0C"
+        android:fontFamily="casual"
+        android:textColor="#131111"/>
+
+    <EditText
+        android:id="@+id/inputMessage"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="Enter your message"
+        android:layout_below="@id/inputEmail"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:background="@drawable/edit_text_style_black"
+        android:textColorHint="#0C0C0C"
+        android:fontFamily="casual"
+        android:textColor="#0E0D0D"/>
+
+    <Button
+        android:id="@+id/sendMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="send message"
+        style="@style/buttons"
+        android:background="@drawable/btn_style"
+        android:layout_below="@+id/inputMessage"
+        android:layout_marginTop="30dp"/>
+
+
+</RelativeLayout>
