@@ -1,7 +1,9 @@
-package com.example.carrental;
+package com.example.carrental.Controllers;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.carrental.R;
 
 public class ContactUs extends AppCompatActivity {
 

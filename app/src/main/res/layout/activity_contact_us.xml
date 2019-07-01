@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactUs"
+    tools:context=".Controllers.ContactUs"
     android:background="@drawable/btn_style"
     android:paddingLeft="20dp"
     android:paddingRight="20dp">

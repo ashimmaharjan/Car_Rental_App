@@ -1,6 +1,8 @@
 package com.example.carrental.Controllers;
 
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -9,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import Broadcast.BroadcastReceiver;
 import com.example.carrental.Interface.CarRentalsAPI;
 import com.example.carrental.R;
 
@@ -19,6 +22,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
+
+    BroadcastReceiver broadcastReceiver=new BroadcastReceiver(this);
+
     EditText username,password;
     Button btnLogin,btnSignUp;
     CarRentalsAPI api;
@@ -94,5 +100,19 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 startActivity(openRegister);
                 break;
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        IntentFilter intentFilter=new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(broadcastReceiver,intentFilter);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        unregisterReceiver(broadcastReceiver);
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutUs"
+    tools:context=".Controllers.AboutUs"
     android:background="@drawable/btn_style">
 
    <ScrollView
@@ -53,7 +53,7 @@
            <ImageView
                android:id="@+id/image1"
                android:layout_width="match_parent"
-               android:layout_height="300"
+               android:layout_height="300dp"
                android:src="@drawable/aboutus"
                android:scaleType="fitXY"
 

@@ -12,8 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ContactUs"></activity>
-        <activity android:name=".AboutUs" />
+        <activity android:name=".Controllers.BroadcastActivity"></activity>
+        <activity android:name=".Controllers.ContactUs" />
+        <activity android:name=".Controllers.AboutUs" />
         <activity android:name=".Controllers.UpdateDeleteCar" />
         <activity android:name=".Controllers.DisplayClickedCar" />
         <activity android:name=".Controllers.AdminDashboard" />
