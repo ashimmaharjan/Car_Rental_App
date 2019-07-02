@@ -3,6 +3,8 @@
     package="com.example.carrental">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Controllers.BroadcastActivity"></activity>
+        <activity
+            android:name=".UserNavigationDrawer"
+            android:label="@string/title_activity_user_navigation_drawer"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Controllers.BroadcastActivity" />
         <activity android:name=".Controllers.ContactUs" />
         <activity android:name=".Controllers.AboutUs" />
         <activity android:name=".Controllers.UpdateDeleteCar" />

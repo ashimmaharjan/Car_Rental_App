@@ -14,6 +14,7 @@ import android.widget.Toast;
 import Broadcast.BroadcastReceiver;
 import com.example.carrental.Interface.CarRentalsAPI;
 import com.example.carrental.R;
+import com.example.carrental.UserNavigationDrawer;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -81,7 +82,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                             public void onResponse(Call<String> call, Response<String> response) {
                                 if(response.body().equals("Login successful")){
                                     Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                    Intent openDashboard=new Intent(Login.this,Dashboard.class);
+                                    Intent openDashboard=new Intent(Login.this, UserNavigationDrawer.class);
                                     startActivity(openDashboard);
                                 }
                             }

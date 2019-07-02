@@ -1,11 +1,17 @@
 package com.example.carrental.Controllers;
 
+import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -42,8 +48,10 @@ public class AddCar extends AppCompatActivity {
     Uri imageUri;
     Bitmap bitmap;
     public static final int PICK_IMAGE=1;
+    public static final int CAPTURE_IMAGE=2;
     Retrofit retrofit;
     CarRentalsAPI carRentalsAPI;
+    AlertDialog actions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +86,7 @@ public class AddCar extends AppCompatActivity {
         imageCar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                checkPermission();
                 openGallery();
             }
         });
@@ -109,6 +118,16 @@ public class AddCar extends AppCompatActivity {
         carRentalsAPI=retrofit.create(CarRentalsAPI.class);
     }
 
+    private void checkPermission()
+    {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(this,new String[]
+                    {Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE},0);
+        }
+    }
+
+
     public void openGallery()
     {
         Intent gallery=new Intent();
@@ -122,7 +141,6 @@ public class AddCar extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE && resultCode == RESULT_OK) {
             imageUri = data.getData();
-
 
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
