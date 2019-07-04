@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,9 +17,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
-import com.example.carrental.Controllers.AboutUs;
-import com.example.carrental.Controllers.ContactUs;
-import com.example.carrental.Controllers.Dashboard;
+import com.example.carrental.Fragments.AboutUs;
+import com.example.carrental.Fragments.ContactUs;
 import com.example.carrental.Fragments.Home;
 import com.example.carrental.Fragments.Profile;
 
@@ -83,23 +84,27 @@ public class UserNavigationDrawer extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            Intent openHome=new Intent(UserNavigationDrawer.this, Dashboard.class);
-            startActivity(openHome);
+            fragmentTransaction.replace(R.id.fragment_container,new Home());
+            fragmentTransaction.commit();
             // Handle the camera action
         } else if (id == R.id.nav_aboutUs) {
-            Intent openAboutUs=new Intent(UserNavigationDrawer.this, AboutUs.class);
-            startActivity(openAboutUs);
+            fragmentTransaction.replace(R.id.fragment_container,new AboutUs());
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_contactUs) {
-            Intent openContactUs=new Intent(UserNavigationDrawer.this, ContactUs.class);
-            startActivity(openContactUs);
+            fragmentTransaction.replace(R.id.fragment_container,new ContactUs());
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_profile) {
-            Intent openProfile=new Intent(UserNavigationDrawer.this, Profile.class);
-            startActivity(openProfile);
+            fragmentTransaction.replace(R.id.fragment_container,new Profile());
+            fragmentTransaction.commit();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

@@ -19,8 +19,6 @@
             android:label="@string/title_activity_user_navigation_drawer"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Controllers.BroadcastActivity" />
-        <activity android:name=".Controllers.ContactUs" />
-        <activity android:name=".Controllers.AboutUs" />
         <activity android:name=".Controllers.UpdateDeleteCar" />
         <activity android:name=".Controllers.DisplayClickedCar" />
         <activity android:name=".Controllers.AdminDashboard" />

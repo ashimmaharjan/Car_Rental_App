@@ -8,4 +8,11 @@
     tools:context=".UserNavigationDrawer"
     tools:showIn="@layout/app_bar_user_navigation_drawer">
 
+    <RelativeLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>

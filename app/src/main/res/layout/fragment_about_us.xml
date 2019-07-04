@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.AboutUs"
+    android:background="@drawable/btn_style">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/topPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About Us"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="35sp"/>
+
+            <TextView
+                android:id="@+id/companyOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Company Overview"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textAllCaps="true"
+                android:fontFamily="sans-serif"
+                android:textSize="25sp"
+                android:layout_below="@+id/topPanel"/>
+
+            <TextView
+                android:id="@+id/textIntro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_us"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:fontFamily="casual"
+                android:textSize="18sp"
+                android:layout_below="@+id/companyOverview"/>
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:src="@drawable/aboutus"
+                android:scaleType="fitXY"
+
+                android:layout_below="@+id/textIntro"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</FrameLayout>
