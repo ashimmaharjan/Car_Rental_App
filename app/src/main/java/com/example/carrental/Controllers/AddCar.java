@@ -11,6 +11,7 @@ import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,16 +48,20 @@ public class AddCar extends AppCompatActivity {
     Button btnInsertCar;
     Uri imageUri;
     Bitmap bitmap;
-    public static final int PICK_IMAGE=1;
-    public static final int CAPTURE_IMAGE=2;
+    private static final int PICK_IMAGE=1;
+    private static final int CAPTURE_IMAGE=2;
     Retrofit retrofit;
     CarRentalsAPI carRentalsAPI;
-    AlertDialog actions;
+    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_car);
+
+        actionBar=getSupportActionBar();
+        actionBar.setTitle("Admin Dashboard");
+        actionBar.setSubtitle("Add Car");
 
         imageCar=findViewById(R.id.inputCarImage);
         carName=findViewById(R.id.inputCarName);
@@ -87,7 +92,28 @@ public class AddCar extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 checkPermission();
-                openGallery();
+
+                AlertDialog.Builder builder=new AlertDialog.Builder(AddCar.this);
+                builder.setTitle("Choose an option");
+
+                String[] options={"Open Camera","Choose from gallery"};
+                builder.setItems(options, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which){
+                            case 0: //for camera
+                                Intent openCamera=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                                startActivityForResult(openCamera,CAPTURE_IMAGE);
+                                break;
+
+                            case 1://for gallery
+                                openGallery();
+                                break;
+                        }
+                    }
+                });
+                AlertDialog dialog=builder.create();
+                dialog.show();
             }
         });
 
@@ -140,15 +166,25 @@ public class AddCar extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE && resultCode == RESULT_OK) {
-            imageUri = data.getData();
 
+            if (data==null)
+            {
+                Toast.makeText(this, "No image selected. Please select a image.", Toast.LENGTH_SHORT).show();
+            }
+            imageUri = data.getData();
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
                 imageCar.setImageBitmap(bitmap);
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+
+        if (requestCode==CAPTURE_IMAGE && resultCode==RESULT_OK)
+        {
+            Bundle extras=data.getExtras();
+            bitmap=(Bitmap)extras.get("data");
+            imageCar.setImageBitmap(bitmap);
         }
     }
 
