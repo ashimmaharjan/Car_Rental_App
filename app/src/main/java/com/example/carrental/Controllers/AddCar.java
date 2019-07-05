@@ -234,20 +234,22 @@ public class AddCar extends AppCompatActivity {
         String cMileage=carMileage.getText().toString();
         String cRPrice=carRentalPrice.getText().toString();
         String cImageName=carImageName.getText().toString();
-        createInstance();
 
-        Call<String> carCall=carRentalsAPI.addCar(cName,cMan,cAC,cSeats,cMileage,cRPrice,cImageName);
-        carCall.enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                Toast.makeText(AddCar.this, "Items added", Toast.LENGTH_SHORT).show();
-            }
+            createInstance();
 
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                Toast.makeText(AddCar.this, "Error"+t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+            Call<String> carCall = carRentalsAPI.addCar(cName, cMan, cAC, cSeats, cMileage, cRPrice, cImageName);
+            carCall.enqueue(new Callback<String>() {
+                @Override
+                public void onResponse(Call<String> call, Response<String> response) {
+                    Toast.makeText(AddCar.this, "Items added", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onFailure(Call<String> call, Throwable t) {
+                    Toast.makeText(AddCar.this, "Error" + t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
 
 
     }

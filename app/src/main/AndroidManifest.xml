@@ -24,7 +24,6 @@
         <activity android:name=".Controllers.AdminDashboard" />
         <activity android:name=".Controllers.AddCar" />
         <activity android:name=".Controllers.Manage_Cars" />
-        <activity android:name=".Controllers.Dashboard" />
         <activity android:name=".Controllers.Register" />
         <activity android:name=".Controllers.MainActivity" />
         <activity android:name=".Controllers.Login" />

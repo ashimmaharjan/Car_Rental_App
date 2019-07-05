@@ -1,11 +1,11 @@
 package com.example.carrental;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -24,6 +24,7 @@ import com.example.carrental.Fragments.Profile;
 
 public class UserNavigationDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,8 @@ public class UserNavigationDrawer extends AppCompatActivity
         setContentView(R.layout.activity_user_navigation_drawer);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        actionBar=getSupportActionBar();
+        actionBar.setTitle("User Dashboard");
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,9 +94,8 @@ public class UserNavigationDrawer extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            fragmentTransaction.replace(R.id.fragment_container,new Home());
+            fragmentTransaction.replace(R.id.fragment_container,new Dashboard());
             fragmentTransaction.commit();
-            // Handle the camera action
         } else if (id == R.id.nav_aboutUs) {
             fragmentTransaction.replace(R.id.fragment_container,new AboutUs());
             fragmentTransaction.commit();

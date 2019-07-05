@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import Broadcast.BroadcastReceiver;
+
+import com.example.carrental.Dashboard;
 import com.example.carrental.Interface.CarRentalsAPI;
 import com.example.carrental.R;
 import com.example.carrental.UserNavigationDrawer;
@@ -72,7 +74,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     {
                         Intent openAdminDashboard=new Intent(Login.this, AdminDashboard.class);
                         startActivity(openAdminDashboard);
-
+                    }
+                    else if (username.getText().toString().equals("test") && password.getText().toString().equals("test"))
+                    {
+                        Intent openUserDashboard=new Intent(Login.this, UserNavigationDrawer.class);
+                        startActivity(openUserDashboard);
                     }
                     else
                     {

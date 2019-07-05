@@ -38,6 +38,7 @@ public class Home extends Fragment {
     Retrofit retrofit;
     CarRentalsAPI api;
 
+
     public Home() {
         // Required empty public constructor
     }
@@ -46,8 +47,8 @@ public class Home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_home, container, false);
 
+        View view=inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView=view.findViewById(R.id.recyclerView);
 
         getCars();

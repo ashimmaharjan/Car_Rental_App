@@ -1,29 +1,43 @@
-package com.example.carrental.Controllers;
+package com.example.carrental;
 
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
+import com.example.carrental.Controllers.ViewPagerFragmentAdapter;
 import com.example.carrental.Fragments.Bookings;
 import com.example.carrental.Fragments.Home;
 import com.example.carrental.Fragments.Profile;
 import com.example.carrental.Fragments.Search;
-import com.example.carrental.R;
 
-public class Dashboard extends AppCompatActivity {
 
-    private ViewPager viewPager;
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class Dashboard extends Fragment {
+
+
+    public Dashboard() {
+        // Required empty public constructor
+    }
+
     private TabLayout tabLayout;
+    private ViewPager viewPager;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+       View view=inflater.inflate(R.layout.fragment_dashboard,container,false);
 
-        tabLayout=findViewById(R.id.tabId);
-        viewPager=findViewById(R.id.viewPager);
+        tabLayout=view.findViewById(R.id.tabId);
+        viewPager=view.findViewById(R.id.viewPager);
 
-        ViewPagerFragmentAdapter viewPagerFragmentAdapter=new ViewPagerFragmentAdapter(getSupportFragmentManager());
+        ViewPagerFragmentAdapter viewPagerFragmentAdapter=new ViewPagerFragmentAdapter(getChildFragmentManager());
 
         viewPagerFragmentAdapter.addFragment(new Home(),"Home");
         viewPagerFragmentAdapter.addFragment(new Search(),"Search");
@@ -37,5 +51,7 @@ public class Dashboard extends AppCompatActivity {
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_book_black_24dp);
         tabLayout.getTabAt(3).setIcon(R.drawable.ic_person_black_24dp);
 
+       return view;
     }
+
 }
