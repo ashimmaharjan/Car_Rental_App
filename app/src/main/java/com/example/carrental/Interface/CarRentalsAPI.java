@@ -2,6 +2,7 @@ package com.example.carrental.Interface;
 
 import android.telephony.SignalStrength;
 
+import com.example.carrental.Model.AuthToken;
 import com.example.carrental.Model.Cars;
 import com.example.carrental.Model.Users;
 
@@ -16,6 +17,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 
 public interface CarRentalsAPI {
 
@@ -25,7 +27,12 @@ public interface CarRentalsAPI {
 
     @FormUrlEncoded
     @POST("login")
-    Call<String> loginCheck(@Field("username") String username,@Field("password") String password);
+    Call<AuthToken> loginCheck(@Field("username") String username, @Field("password") String password);
+
+
+    @GET("getUserById/{id}")
+    Call<Users> userProfile(@Path("id") String userId);
+
 
     @FormUrlEncoded
     @POST("addCar")

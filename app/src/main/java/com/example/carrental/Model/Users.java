@@ -2,16 +2,28 @@ package com.example.carrental.Model;
 
 public class Users {
 
+    private String _id;
+
     private String first_name,last_name,email,
             username,password,phone_number;
 
-    public Users(String first_name, String last_name, String email, String username, String password, String phone_number) {
+
+    public Users(String _id, String first_name, String last_name, String email, String username, String password, String phone_number) {
+        this._id = _id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
         this.username = username;
         this.password = password;
         this.phone_number = phone_number;
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getFirst_name() {

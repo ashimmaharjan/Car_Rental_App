@@ -2,6 +2,7 @@ package com.example.carrental.Controllers;
 
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -20,6 +21,7 @@ import Broadcast.BroadcastReceiver;
 
 import com.example.carrental.Dashboard;
 import com.example.carrental.Interface.CarRentalsAPI;
+import com.example.carrental.Model.AuthToken;
 import com.example.carrental.R;
 import com.example.carrental.UserNavigationDrawer;
 
@@ -36,6 +38,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     EditText username,password;
     Button btnLogin,btnSignUp;
     CarRentalsAPI api;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
 
     private SensorManager sensorManager;
 
@@ -91,20 +95,31 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     }
                     else
                     {
-                        Call<String> checkLogin=api.loginCheck(username.getText().toString(),password.getText().toString());
-                        checkLogin.enqueue(new Callback<String>() {
+                        Call<AuthToken> checkLogin=api.loginCheck(username.getText().toString(),password.getText().toString());
+                        checkLogin.enqueue(new Callback<AuthToken>() {
                             @Override
-                            public void onResponse(Call<String> call, Response<String> response) {
-                                if(response.body().equals("Login successful")){
-                                    Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                    Intent openDashboard=new Intent(Login.this, UserNavigationDrawer.class);
-                                    startActivity(openDashboard);
+                            public void onResponse(Call<AuthToken> call, Response<AuthToken> response) {
+                                if(!response.isSuccessful())
+                                {
+                                    Toast.makeText(Login.this, "Error"+response.code(), Toast.LENGTH_LONG).show();
+                                    return;
                                 }
+                                preferences=(Login.this).getSharedPreferences("UserData",0);
+                                editor=preferences.edit();
+                                AuthToken data=response.body();
+                                editor.putString("token",data.getToken());
+                                editor.putString("uid",data.getUsers().get_id());
+                                Toast.makeText(Login.this, "User id is : " + data.getUsers().get_id(), Toast.LENGTH_SHORT).show();
+                                editor.commit();
+                                Toast.makeText(Login.this, "Login successful" + response.body().getToken(), Toast.LENGTH_SHORT).show();
+                                Intent openDashboard=new Intent(Login.this,UserNavigationDrawer.class);
+                                startActivity(openDashboard);
+                                finish();
                             }
 
                             @Override
-                            public void onFailure(Call<String> call, Throwable t) {
-                                Toast.makeText(Login.this, "Invalid username or password.", Toast.LENGTH_SHORT).show();
+                            public void onFailure(Call<AuthToken> call, Throwable t) {
+                                Toast.makeText(Login.this, "Error "+t.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
                     }

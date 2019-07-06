@@ -12,9 +12,7 @@
         android:id="@+id/sample_CarImage"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:adjustViewBounds="true"
-
-        />
+        android:adjustViewBounds="true"/>
 
     <TextView
         android:id="@+id/sample_CarName"
