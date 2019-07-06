@@ -50,8 +50,8 @@ public class BroadcastReceiver extends android.content.BroadcastReceiver {
     {
         Notification notification=new NotificationCompat.Builder(context, NotificationChannels.CHANNEL_1)
                 .setSmallIcon(R.drawable.ic_rss_feed_black_24dp)
-                .setContentTitle("No connection")
-                .setContentText("No network connectivity detected. Please connect to a network")
+                .setContentTitle("No Internet connection!!")
+                .setContentText("Oops. It seems you are not connected to Internet!! Try again later.")
                 .setCategory(NotificationCompat.CATEGORY_SYSTEM)
                 .build();
         notificationManagerCompat.notify(1,notification);
@@ -61,8 +61,8 @@ public class BroadcastReceiver extends android.content.BroadcastReceiver {
     {
         Notification notification=new NotificationCompat.Builder(context,NotificationChannels.CHANNEL_2)
                 .setSmallIcon(R.drawable.ic_rss_feed_black_24dp)
-                .setContentTitle("Connected")
-                .setContentText("Network connection detected.")
+                .setContentTitle("Ready to Roll.")
+                .setContentText("Let's start renting!!!")
                 .setCategory(NotificationCompat.CATEGORY_SYSTEM)
                 .build();
         notificationManagerCompat.notify(2,notification);
