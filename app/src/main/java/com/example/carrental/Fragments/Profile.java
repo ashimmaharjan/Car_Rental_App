@@ -1,6 +1,7 @@
 package com.example.carrental.Fragments;
 
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import com.example.carrental.Interface.CarRentalsAPI;
 import com.example.carrental.Model.Users;
 import com.example.carrental.R;
+import com.example.carrental.UpdateProfile;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -57,6 +59,15 @@ public class Profile extends Fragment {
 
 
        loadUserData();
+
+       btnEditProfile.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent openUpdateProfile=new Intent(getActivity(), UpdateProfile.class);
+               startActivity(openUpdateProfile);
+
+           }
+       });
        return view;
     }
 

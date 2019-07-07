@@ -16,6 +16,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
 
@@ -32,6 +33,10 @@ public interface CarRentalsAPI {
 
     @GET("getUserById/{id}")
     Call<Users> userProfile(@Path("id") String userId);
+
+    @FormUrlEncoded
+    @PUT("updateProfile")
+    Call<String> updateProfile(@Field("_id") String uid,@Field("first_name") String first_name, @Field("last_name") String last_name, @Field("email")String email, @Field("username") String username, @Field("phone_number") String phone_number);
 
 
     @FormUrlEncoded

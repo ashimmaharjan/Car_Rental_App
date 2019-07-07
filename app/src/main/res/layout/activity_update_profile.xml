@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateProfile"
+    android:background="@drawable/gradient_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
+
+
+        <TextView
+            android:id="@+id/txtRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update Profile"
+            android:textSize="40sp"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="#ffff"
+            android:textAllCaps="true"/>
+
+        <TextView
+            android:id="@+id/txtFName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="First Name:"
+            android:layout_below="@+id/txtRegister"
+            style="@style/textView_register"/>
+
+        <TextView
+            android:id="@+id/txtLName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Last Name:"
+            style="@style/textView_register"
+            android:layout_below="@+id/inputFName"/>
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            style="@style/textView_register"
+            android:layout_below="@id/inputLName"/>
+
+        <TextView
+            android:id="@+id/txtUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Username:"
+            style="@style/textView_register"
+            android:layout_below="@+id/inputEmail"/>
+
+        <TextView
+            android:id="@+id/txtPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone Number:"
+            style="@style/textView_register"
+            android:layout_below="@id/inputUName"/>
+
+        <EditText
+            android:id="@+id/inputFName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Enter your first name"
+            android:background="@drawable/edit_text_style"
+            android:layout_below="@id/txtFName"
+            style="@style/editText_register"/>
+
+        <EditText
+            android:id="@+id/inputLName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Enter your last name"
+            android:background="@drawable/edit_text_style"
+            android:layout_below="@id/txtLName"
+            style="@style/editText_register"/>
+
+        <EditText
+            android:id="@+id/inputEmail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Enter your email"
+            android:background="@drawable/edit_text_style"
+            android:layout_below="@id/txtEmail"
+            style="@style/editText_register"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:id="@+id/inputUName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Enter a username"
+            android:background="@drawable/edit_text_style"
+            android:layout_below="@id/txtUsername"
+            style="@style/editText_register"/>
+
+        <EditText
+            android:id="@+id/inputPhone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Enter your phone number"
+            android:background="@drawable/edit_text_style"
+            android:layout_below="@id/txtPhone"
+            style="@style/editText_register"
+            android:inputType="phone"/>
+
+        <Button
+            android:id="@+id/updateProfile"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/inputPhone"
+            android:layout_marginTop="20dp"
+            android:text="Update"
+            style="@style/buttons"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_style"/>
+
+    </RelativeLayout>
+
+</ScrollView>
