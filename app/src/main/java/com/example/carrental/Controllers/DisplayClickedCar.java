@@ -1,11 +1,15 @@
 package com.example.carrental.Controllers;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.carrental.Fragments.Bookings;
 import com.example.carrental.R;
 import com.squareup.picasso.Picasso;
 
@@ -13,6 +17,7 @@ public class DisplayClickedCar extends AppCompatActivity {
 
     ImageView imageDisplay;
     TextView nameDisplay,manDisplay,ACDisplay,seatsDisplay,mileageDisplay,priceDisplay;
+    Button btnBook;
     ActionBar actionBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,15 @@ public class DisplayClickedCar extends AppCompatActivity {
         seatsDisplay=findViewById(R.id.displayCarSeats);
         mileageDisplay=findViewById(R.id.displayCarMileage);
         priceDisplay=findViewById(R.id.displayCarPrice);
+        btnBook=findViewById(R.id.bookCar);
+
+        btnBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToBookings=new Intent(DisplayClickedCar.this, Bookings.class);
+                startActivity(goToBookings);
+            }
+        });
 
         Bundle bundle=getIntent().getExtras();
 

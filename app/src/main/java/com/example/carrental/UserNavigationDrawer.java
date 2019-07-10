@@ -49,6 +49,11 @@ public class UserNavigationDrawer extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container,new Dashboard())
+                .commit();
     }
 
     @Override

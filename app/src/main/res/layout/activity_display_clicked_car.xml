@@ -8,123 +8,147 @@
     android:background="@drawable/gradient_bg">
 
 
-    <TextView
-        android:id="@+id/top"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Details Of The Car"
-        android:textSize="30sp"
-        style="@style/textView_register"
-        android:textStyle="bold"/>
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/displayCarImage"
-        android:layout_width="300dp"
-        android:layout_height="250dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/top"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/txtCarName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Car Name : "
-        style="@style/textView_DC"
-        android:layout_marginLeft="30dp"
-        android:layout_below="@+id/displayCarImage"/>
+            <TextView
+                android:id="@+id/top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Details Of The Car"
+                android:textSize="30sp"
+                style="@style/textView_register"
+                android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/displayCarName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/textView_DC"
-        android:layout_below="@+id/displayCarImage"
-        android:layout_toRightOf="@+id/txtCarName"/>
+            <ImageView
+                android:id="@+id/displayCarImage"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/top"/>
 
-    <TextView
-        android:id="@+id/txtCarMan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Manufacturer : "
-        style="@style/textView_DC"
-        android:layout_marginLeft="30dp"
-        android:layout_below="@+id/txtCarName"/>
+            <TextView
+                android:id="@+id/txtCarName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Car Name : "
+                style="@style/textView_DC"
+                android:layout_marginLeft="30dp"
+                android:layout_below="@+id/displayCarImage"/>
 
-    <TextView
-        android:id="@+id/displayCarMan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/textView_DC"
-        android:layout_below="@+id/displayCarName"
-        android:layout_toRightOf="@+id/txtCarMan"/>
+            <TextView
+                android:id="@+id/displayCarName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textView_DC"
+                android:layout_below="@+id/displayCarImage"
+                android:layout_toRightOf="@+id/txtCarName"/>
 
-    <TextView
-        android:id="@+id/txtCarAC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Air Conditioner : "
-        style="@style/textView_DC"
-        android:layout_marginLeft="30dp"
-        android:layout_below="@+id/displayCarMan"/>
+            <TextView
+                android:id="@+id/txtCarMan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manufacturer : "
+                style="@style/textView_DC"
+                android:layout_marginLeft="30dp"
+                android:layout_below="@+id/txtCarName"/>
 
-    <TextView
-        android:id="@+id/displayCarAC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/textView_DC"
-        android:layout_below="@+id/displayCarMan"
-        android:layout_toRightOf="@+id/txtCarAC"/>
+            <TextView
+                android:id="@+id/displayCarMan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textView_DC"
+                android:layout_below="@+id/displayCarName"
+                android:layout_toRightOf="@+id/txtCarMan"/>
 
-    <TextView
-        android:id="@+id/txtCarSeats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="No. of Seats : "
-        style="@style/textView_DC"
-        android:layout_marginLeft="30dp"
-        android:layout_below="@+id/displayCarAC"/>
+            <TextView
+                android:id="@+id/txtCarAC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Air Conditioner : "
+                style="@style/textView_DC"
+                android:layout_marginLeft="30dp"
+                android:layout_below="@+id/displayCarMan"/>
 
-    <TextView
-        android:id="@+id/displayCarSeats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/textView_DC"
-        android:layout_below="@+id/displayCarAC"
-        android:layout_toRightOf="@+id/txtCarSeats"/>
+            <TextView
+                android:id="@+id/displayCarAC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textView_DC"
+                android:layout_below="@+id/displayCarMan"
+                android:layout_toRightOf="@+id/txtCarAC"/>
 
-    <TextView
-        android:id="@+id/txtCarMileage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mileage (km/litre) : "
-        style="@style/textView_DC"
-        android:layout_marginLeft="30dp"
-        android:layout_below="@+id/displayCarSeats"/>
+            <TextView
+                android:id="@+id/txtCarSeats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No. of Seats : "
+                style="@style/textView_DC"
+                android:layout_marginLeft="30dp"
+                android:layout_below="@+id/displayCarAC"/>
 
-    <TextView
-        android:id="@+id/displayCarMileage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/textView_DC"
-        android:layout_below="@+id/displayCarSeats"
-        android:layout_toRightOf="@+id/txtCarMileage"/>
+            <TextView
+                android:id="@+id/displayCarSeats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textView_DC"
+                android:layout_below="@+id/displayCarAC"
+                android:layout_toRightOf="@+id/txtCarSeats"/>
 
-    <TextView
-        android:id="@+id/txtCarPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rental Price / hour (Rs.) : "
-        style="@style/textView_DC"
-        android:layout_marginLeft="30dp"
-        android:layout_below="@+id/displayCarMileage"/>
+            <TextView
+                android:id="@+id/txtCarMileage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mileage (km/litre) : "
+                style="@style/textView_DC"
+                android:layout_marginLeft="30dp"
+                android:layout_below="@+id/displayCarSeats"/>
 
-    <TextView
-        android:id="@+id/displayCarPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/textView_DC"
-        android:layout_below="@+id/displayCarMileage"
-        android:layout_toRightOf="@+id/txtCarPrice"/>
+            <TextView
+                android:id="@+id/displayCarMileage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textView_DC"
+                android:layout_below="@+id/displayCarSeats"
+                android:layout_toRightOf="@+id/txtCarMileage"/>
+
+            <TextView
+                android:id="@+id/txtCarPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rental Price / hour (Rs.) : "
+                style="@style/textView_DC"
+                android:layout_marginLeft="30dp"
+                android:layout_below="@+id/displayCarMileage"/>
+
+            <TextView
+                android:id="@+id/displayCarPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textView_DC"
+                android:layout_below="@+id/displayCarMileage"
+                android:layout_toRightOf="@+id/txtCarPrice"/>
+
+            <Button
+                android:id="@+id/bookCar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Book"
+                android:layout_below="@+id/displayCarPrice"
+                android:background="@drawable/btn_style"
+                style="@style/buttons"
+                android:layout_marginTop="10dp"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.carrental.Controllers;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -8,6 +9,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.net.ConnectivityManager;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -74,12 +76,17 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 {
                     username.setError("Please enter your username");
                     username.requestFocus();
+                    Vibrator vibrator=(Vibrator)this.getSystemService(Context.VIBRATOR_SERVICE);
+                    vibrator.vibrate(400);
                     return;
                 }
                 else if(TextUtils.isEmpty(password.getText().toString()))
                 {
                     password.setError("Please enter your password");
                     password.requestFocus();
+                    Vibrator vibrator=(Vibrator)this.getSystemService(Context.VIBRATOR_SERVICE);
+                    vibrator.vibrate(400);
+                    return;
                 }
                 else
                 {

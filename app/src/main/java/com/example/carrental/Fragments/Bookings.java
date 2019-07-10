@@ -11,8 +11,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.carrental.R;
 
@@ -29,6 +32,8 @@ public class Bookings extends Fragment {
         // Required empty public constructor
     }
 
+    private Spinner pickUpLocation,dropOffLocation;
+    Button btnBook;
 
     static EditText pickUpDate,dropOffDate;
     @Override
@@ -38,6 +43,9 @@ public class Bookings extends Fragment {
         View view=inflater.inflate(R.layout.fragment_bookings, container, false);
         pickUpDate=view.findViewById(R.id.inputPickUpDate);
         dropOffDate=view.findViewById(R.id.inputDropOffDate);
+        pickUpLocation=view.findViewById(R.id.inputPickUpLocation);
+        dropOffLocation=view.findViewById(R.id.inputDropOffLocation);
+        btnBook=view.findViewById(R.id.book);
 
 
         pickUpDate.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +65,17 @@ public class Bookings extends Fragment {
                datePickerFragment.show(getFragmentManager(),"datePicker");
             }
         });
+
+        btnBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "PickUpLocation is : "+ String.valueOf(pickUpLocation.getSelectedItem()), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "DropOffLocation is : "+ String.valueOf(dropOffLocation.getSelectedItem()), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
 
 
         return view;
@@ -100,5 +119,8 @@ public class Bookings extends Fragment {
             }
         }
     }
+
+
+
 
 }

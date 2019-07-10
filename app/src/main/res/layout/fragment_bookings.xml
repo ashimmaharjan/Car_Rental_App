@@ -6,46 +6,126 @@
     tools:context=".Fragments.Bookings">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/textView_register"
-            android:text="Pick-Up Date:"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/editText_register"
-            android:id="@+id/inputPickUpDate"
-            android:inputType="date"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/textView_register"
-            android:text="Drop-off Date:"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/editText_register"
-            android:id="@+id/inputDropOffDate"
-            android:inputType="date"/>
-
-        <Button
-            android:id="@+id/book"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_style"
-            android:text="BOOK"
-            style="@style/buttons"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
 
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Book Car"
+                android:textAllCaps="true"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="30dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/edit_text_style"
+                style="@style/editText_register"
+                android:id="@+id/putUserId"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/edit_text_style"
+                style="@style/editText_register"
+                android:id="@+id/putFirstName"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/edit_text_style"
+                style="@style/editText_register"
+                android:layout_marginTop="10dp"
+                android:id="@+id/putCarName"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/textView_register"
+                android:text="Pick-Up Location:"
+                android:layout_marginTop="10dp"/>
+
+            <Spinner
+                android:id="@+id/inputPickUpLocation"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:entries="@array/locations"
+                android:textAlignment="center"
+                android:background="@drawable/spinner_bg"
+                android:layout_marginTop="10dp"
+                android:prompt="@string/pickUpLocation_prompt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/textView_register"
+                android:text="Pick-Up Date:"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                style="@style/editText_register"
+                android:id="@+id/inputPickUpDate"
+                android:inputType="date"
+                android:background="@drawable/edit_text_style"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/textView_register"
+                android:text="Drop-Off Location:"/>
+
+            <Spinner
+                android:id="@+id/inputDropOffLocation"
+                android:layout_width="match_parent"
+                style="@style/textView_register"
+                android:textAlignment="center"
+                android:layout_height="40dp"
+                android:background="@drawable/spinner_bg"
+                android:entries="@array/locations"
+                android:layout_gravity="center_horizontal"
+                android:prompt="@string/dropOffLocation_prompt">
+            </Spinner>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/textView_register"
+                android:text="Drop-off Date:"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                style="@style/editText_register"
+                android:id="@+id/inputDropOffDate"
+                android:inputType="date"
+                android:background="@drawable/edit_text_style"/>
+
+            <Button
+                android:id="@+id/book"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_style"
+                android:text="BOOK"
+                style="@style/buttons"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+
+    </ScrollView>
 
 </FrameLayout>

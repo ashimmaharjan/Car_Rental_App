@@ -3,7 +3,6 @@ package com.example.carrental.Model;
 public class AuthToken {
 
     private String token;
-
     private Users users;
 
     public AuthToken(String token, Users users) {
